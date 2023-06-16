@@ -1,0 +1,14 @@
+{
+  "name": "myflix-client",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "myflix-client"
+  },
+  "author": "Alicja",
+  "license": "ISC"
+}
