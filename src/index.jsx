@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 //Import statement to indicate that I need to bundle `./index.scss`
 import "./index.scss";
 
-const myFlixApplication = () => {
+const MyFlixApplication = () => {
     return (
         <div className="my-flix">
             <div>Good morning</div>
