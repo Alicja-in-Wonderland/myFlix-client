@@ -1,4 +1,6 @@
-# myFlix-client is the front-end of the movie app - MyFlix. 
+# myFlix-client
+
+This is the front-end of the movie app - MyFlix.
 
 To setup the application:
 
