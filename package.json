@@ -9,7 +9,7 @@
     "type": "git",
     "url": "myflix-client"
   },
-  "author": "Alicja",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
