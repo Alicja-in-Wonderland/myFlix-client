@@ -18,11 +18,9 @@ export const MainView = () => {
                         Description: movie.Description,
                         Genre: {
                             Name: movie.Genre.Name,
-                            Description: movie.Genre.Description
                         },
                         Director: {
                             Name: movie.Director.Name,
-                            Bio: movie.Director.Bio
                         },
                         Featured: movie.Featured,
                         ImagePath: movie.ImagePath
