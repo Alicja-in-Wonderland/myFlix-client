@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+
+//Info displayed once user clicks a movie title
 export const MovieView = ({ movie, onBackClick }) => {
     return (
         <div>
@@ -23,4 +26,20 @@ export const MovieView = ({ movie, onBackClick }) => {
             <button onClick={onBackClick}>Back</button>
         </div>
     );
+};
+
+//Defines all the props constraints for the MovieView
+MovieView.propTypes = {
+    movie: PropTypes.shape({
+        ImagePath: PropTypes.string,
+        Title: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+        Genre: PropTypes.shape({
+            Name: PropTypes.string.isRequired
+        }),
+        Director: PropTypes.shape({
+            Name: PropTypes.string.isRequired
+        })
+    }).isRequired,
+    onBackClick: PropTypes.func.isRequired
 };
