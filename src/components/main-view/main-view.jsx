@@ -1,36 +1,53 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+import { LoginView } from "../login-view/login-view";
+import { SignupView } from "../signup-view/signup-view";
 
 export const MainView = () => {
-    const [movies, setMovies] = useState([
-        {
-            id: 1,
-            title: "The Dark Knight",
-            image: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg",
-            description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-            genre: "Action",
-            director: "Christopher Nolan"
-        },
-        {
-            id: 2,
-            title: "Silence of the Lambs",
-            image: "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg",
-            description: "A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer.",
-            genre: "Thriller",
-            director: "Jonathan Demme"
-        },
-        {
-            id: 3,
-            title: "Se7en",
-            image: "https://m.media-amazon.com/images/M/MV5BODhjMTZjZTUtMmFhOS00NmJmLWE2ZjMtOTYyMmQ3NTY4MjMyXkEyXkFqcGdeQXVyMzAxNjg3MjQ@._V1_FMjpg_UX1000_.jpg",
-            description: "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.",
-            genre: "Thriller",
-            director: "David Fincher"
-        }
-    ]);
-
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedToken = localStorage.getItem("token");
+    const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
+    const [user, setUser] = useState(storedUser ? storedUser : null);
+    const [token, setToken] = useState(storedToken ? storedToken : null);
+
+    useEffect(() => {
+        if (!token) return;
+
+        fetch("https://myflix-db.herokuapp.com/movies", {
+            headers: { Authorization: `Bearer ${token}` }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                const moviesFromApi = data.map((movie) => {
+                    return {
+                        _id: movie.id,
+                        Title: movie.Title,
+                        Description: movie.Description,
+                        Genre: {
+                            Name: movie.Genre.Name,
+                        },
+                        Director: {
+                            Name: movie.Director.Name,
+                        },
+                        Featured: movie.Featured,
+                        ImagePath: movie.ImagePath
+                    };
+                });
+
+                setMovies(moviesFromApi);
+            });
+    }, [token]);
+
+    if (!user) {
+        return <LoginView
+            onLoggedIn={(user, token) => {
+                setUser(user);
+                setToken(token);
+            }} />
+    }
 
     if (selectedMovie) {
         return (
@@ -43,15 +60,26 @@ export const MainView = () => {
     } else {
         return (
             <div>
-                {movies.map((movie) => (
-                    <MovieCard
-                        key={movie.id}
-                        movie={movie}
-                        onMovieClick={(newSelectedMovie) => {
-                            setSelectedMovie(newSelectedMovie);
-                        }}
-                    />
-                ))}
+                <div>
+                    {movies.map((movie) => (
+                        <MovieCard
+                            key={movie.Title}
+                            movie={movie}
+                            onMovieClick={(newSelectedMovie) => {
+                                setSelectedMovie(newSelectedMovie);
+                            }}
+                        />
+                    ))}
+                </div>
+                <button
+                    onClick={() => {
+                        setUser(null);
+                        setToken(null);
+                        localStorage.clear();
+                    }}
+                >
+                    Logout
+                </button>
             </div>
         );
     }
