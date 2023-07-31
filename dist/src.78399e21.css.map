@@ -1,1 +1,1 @@
-{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA","file":"src.78399e21.css","sourceRoot":"../src","sourcesContent":[""]}
+{"version":3,"sources":["components/movie-view/movie-view.scss","index.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;EACA;EACA;;ACLJ","file":"src.78399e21.css","sourceRoot":"../src","sourcesContent":[".back-button {\n    padding: 4px 12px 4px 12px;\n    color: whitesmoke;\n    background-color: dodgerblue;\n    border: none;\n    border-radius: 4px;\n}",""]}
