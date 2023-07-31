@@ -30118,12 +30118,12 @@ var MainView = function MainView() {
     });
   }, [token]);
   if (!user) {
-    return /*#__PURE__*/_react.default.createElement(_loginView.LoginView, {
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_loginView.LoginView, {
       onLoggedIn: function onLoggedIn(user, token) {
         setUser(user);
         setToken(token);
       }
-    });
+    }), "or", /*#__PURE__*/_react.default.createElement(_signupView.SignupView, null));
   }
   if (selectedMovie) {
     return /*#__PURE__*/_react.default.createElement(_movieView.MovieView, {
@@ -30230,7 +30230,7 @@ var root = (0, _client.createRoot)(container);
 
 //Tells React to render my app in the root DOM element
 root.render( /*#__PURE__*/_react.default.createElement(App, null));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-dom/client":"../node_modules/react-dom/client.js","./components/main-view/main-view":"components/main-view/main-view.jsx","./index.scss":"index.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-dom/client":"../node_modules/react-dom/client.js","./components/main-view/main-view":"components/main-view/main-view.jsx","./index.scss":"index.scss"}],"../../../../.nvm/versions/node/v18.16.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -30255,7 +30255,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54917" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61780" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
@@ -30399,5 +30399,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.jsx"], null)
+},{}]},{},["../../../../.nvm/versions/node/v18.16.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.jsx"], null)
 //# sourceMappingURL=/src.78399e21.js.map

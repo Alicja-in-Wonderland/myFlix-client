@@ -43,11 +43,16 @@ export const MainView = () => {
     }, [token]);
 
     if (!user) {
-        return <LoginView
-            onLoggedIn={(user, token) => {
-                setUser(user);
-                setToken(token);
-            }} />
+        return (
+            <>
+                <LoginView onLoggedIn={(user, token) => {
+                    setUser(user);
+                    setToken(token);
+                }} />
+                or
+                <SignupView />
+            </>
+        );
     }
 
     if (selectedMovie) {
