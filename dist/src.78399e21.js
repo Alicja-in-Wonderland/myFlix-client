@@ -45672,7 +45672,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var MovieCard = function MovieCard(_ref) {
   var movie = _ref.movie,
     onMovieClick = _ref.onMovieClick;
-  return /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Img, {
+  return /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card, {
+    className: "h-100"
+  }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Img, {
     variant: "top",
     src: movie.ImagePath
   }), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Title, null, movie.Title), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Text, null, movie.Director.Name), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Button, {
@@ -46002,13 +46004,16 @@ var MainView = function MainView() {
       return setSelectedMovie(null);
     }
   })) : movies.length === 0 ? /*#__PURE__*/_react.default.createElement("div", null, "The list is empty!") : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, movies.map(function (movie) {
-    return /*#__PURE__*/_react.default.createElement(_movieCard.MovieCard, {
+    return /*#__PURE__*/_react.default.createElement(_Col.default, {
+      className: "mb-5",
       key: movie.Title,
+      md: 3
+    }, /*#__PURE__*/_react.default.createElement(_movieCard.MovieCard, {
       movie: movie,
       onMovieClick: function onMovieClick(newSelectedMovie) {
         setSelectedMovie(newSelectedMovie);
       }
-    });
+    }));
   }), /*#__PURE__*/_react.default.createElement(Button, {
     onClick: function onClick() {
       setUser(null);
@@ -46069,13 +46074,7 @@ function reloadCSS() {
   }, 50);
 }
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../.nvm/versions/node/v18.16.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/bootstrap/dist/css/bootstrap.min.css":[function(require,module,exports) {
-
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-},{"_css_loader":"../../../../.nvm/versions/node/v18.16.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../../.nvm/versions/node/v18.16.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
@@ -46086,18 +46085,13 @@ var _react = _interopRequireDefault(require("react"));
 var _reactDom = _interopRequireDefault(require("react-dom"));
 var _client = require("react-dom/client");
 var _mainView = require("./components/main-view/main-view");
-require("bootstrap/dist/css/bootstrap.min.css");
 var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
 require("./index.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //Import statement to indicate that I need to bundle `./index.scss`
 
 var App = function App() {
-  return /*#__PURE__*/_react.default.createElement(_Container.default, {
-    style: {
-      border: "1px solid blue"
-    }
-  }, /*#__PURE__*/_react.default.createElement(_mainView.MainView, null));
+  return /*#__PURE__*/_react.default.createElement(_Container.default, null, /*#__PURE__*/_react.default.createElement(_mainView.MainView, null));
 };
 
 //Finds the root of my app
@@ -46106,7 +46100,7 @@ var root = (0, _client.createRoot)(container);
 
 //Tells React to render my app in the root DOM element
 root.render( /*#__PURE__*/_react.default.createElement(App, null));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-dom/client":"../node_modules/react-dom/client.js","./components/main-view/main-view":"components/main-view/main-view.jsx","bootstrap/dist/css/bootstrap.min.css":"../node_modules/bootstrap/dist/css/bootstrap.min.css","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","./index.scss":"index.scss"}],"../../../../.nvm/versions/node/v18.16.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-dom/client":"../node_modules/react-dom/client.js","./components/main-view/main-view":"components/main-view/main-view.jsx","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","./index.scss":"index.scss"}],"../../../../.nvm/versions/node/v18.16.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

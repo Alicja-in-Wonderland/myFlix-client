@@ -66,13 +66,14 @@ export const MainView = () => {
             ) : (
                 <>
                     {movies.map((movie) => (
-                        <MovieCard
-                            key={movie.Title}
-                            movie={movie}
-                            onMovieClick={(newSelectedMovie) => {
-                                setSelectedMovie(newSelectedMovie);
-                            }}
-                        />
+                        <Col className="mb-5" key={movie.Title} md={3}>
+                            <MovieCard
+                                movie={movie}
+                                onMovieClick={(newSelectedMovie) => {
+                                    setSelectedMovie(newSelectedMovie);
+                                }}
+                            />
+                        </Col>
                     ))}
                     <Button
                         onClick={() => {
