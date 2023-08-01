@@ -45736,6 +45736,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.LoginView = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -45781,28 +45784,34 @@ var LoginView = function LoginView(_ref) {
       alert("Something went wrong");
     });
   };
-  return /*#__PURE__*/_react.default.createElement("form", {
+  return /*#__PURE__*/_react.default.createElement(_Form.default, {
     onSubmit: handleSubmit
-  }, /*#__PURE__*/_react.default.createElement("label", null, "Username:", /*#__PURE__*/_react.default.createElement("input", {
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formUsername"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Username:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "text",
     value: username,
     onChange: function onChange(e) {
       return setUsername(e.target.value);
     },
-    required: true
-  })), /*#__PURE__*/_react.default.createElement("label", null, "Password:", /*#__PURE__*/_react.default.createElement("input", {
+    required: true,
+    minLength: "3"
+  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formPassword"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Password:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "password",
     value: password,
     onChange: function onChange(e) {
       return setPassword(e.target.value);
     },
     required: true
-  })), /*#__PURE__*/_react.default.createElement("button", {
+  })), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    variant: "primary",
     type: "submit"
-  }, "Submit"));
+  }, "Log In"));
 };
 exports.LoginView = LoginView;
-},{"react":"../node_modules/react/index.js"}],"components/signup-view/signup-view.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js"}],"components/signup-view/signup-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45810,6 +45819,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SignupView = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -45858,9 +45870,11 @@ var SignupView = function SignupView() {
       }
     });
   };
-  return /*#__PURE__*/_react.default.createElement("form", {
+  return /*#__PURE__*/_react.default.createElement(_Form.default, {
     onSubmit: handleSubmit
-  }, /*#__PURE__*/_react.default.createElement("label", null, "Username:", /*#__PURE__*/_react.default.createElement("input", {
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formUsername"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Username:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "text",
     value: username,
     onChange: function onChange(e) {
@@ -45868,33 +45882,40 @@ var SignupView = function SignupView() {
     },
     required: true,
     minLength: "3"
-  })), /*#__PURE__*/_react.default.createElement("label", null, "Password:", /*#__PURE__*/_react.default.createElement("input", {
-    type: "password",
-    value: password,
-    onChange: function onChange(e) {
-      return setPassword(e.target.value);
-    },
-    required: true
-  })), /*#__PURE__*/_react.default.createElement("label", null, "Email:", /*#__PURE__*/_react.default.createElement("input", {
+  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formEmail"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Email:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "email",
     value: email,
     onChange: function onChange(e) {
       return setEmail(e.target.value);
     },
     required: true
-  })), /*#__PURE__*/_react.default.createElement("label", null, "Birthday:", /*#__PURE__*/_react.default.createElement("input", {
+  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formBirthday"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Birthday:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "date",
     value: birthday,
     onChange: function onChange(e) {
       return setBirthday(e.target.value);
     },
     required: true
-  })), /*#__PURE__*/_react.default.createElement("button", {
+  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formPassword"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Password:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
+    type: "password",
+    value: password,
+    onChange: function onChange(e) {
+      return setPassword(e.target.value);
+    },
+    required: true
+  })), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    variant: "primary",
     type: "submit"
   }, "Sign Up"));
 };
 exports.SignupView = SignupView;
-},{"react":"../node_modules/react/index.js"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46106,7 +46127,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52188" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53602" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
