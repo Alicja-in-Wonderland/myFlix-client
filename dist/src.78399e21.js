@@ -46088,12 +46088,17 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 var _client = require("react-dom/client");
 var _mainView = require("./components/main-view/main-view");
 require("bootstrap/dist/css/bootstrap.min.css");
+var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
 require("./index.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //Import statement to indicate that I need to bundle `./index.scss`
 
 var App = function App() {
-  return /*#__PURE__*/_react.default.createElement(_mainView.MainView, null);
+  return /*#__PURE__*/_react.default.createElement(_Container.default, {
+    style: {
+      border: "1px solid blue"
+    }
+  }, /*#__PURE__*/_react.default.createElement(_mainView.MainView, null));
 };
 
 //Finds the root of my app
@@ -46102,7 +46107,7 @@ var root = (0, _client.createRoot)(container);
 
 //Tells React to render my app in the root DOM element
 root.render( /*#__PURE__*/_react.default.createElement(App, null));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-dom/client":"../node_modules/react-dom/client.js","./components/main-view/main-view":"components/main-view/main-view.jsx","bootstrap/dist/css/bootstrap.min.css":"../node_modules/bootstrap/dist/css/bootstrap.min.css","./index.scss":"index.scss"}],"../../../../.nvm/versions/node/v18.16.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-dom/client":"../node_modules/react-dom/client.js","./components/main-view/main-view":"components/main-view/main-view.jsx","bootstrap/dist/css/bootstrap.min.css":"../node_modules/bootstrap/dist/css/bootstrap.min.css","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","./index.scss":"index.scss"}],"../../../../.nvm/versions/node/v18.16.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
