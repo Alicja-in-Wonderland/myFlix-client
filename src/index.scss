@@ -1,6 +1,10 @@
 $primary: Goldenrod;
 $body-bg: Black;
+$body-color: Ivory;
 
-.row {
-    color: ivory;
+.btn {
+    margin-top: 11px;
+    margin-bottom: 11px;
 }
+
+@import '~bootstrap/scss/bootstrap.scss';
