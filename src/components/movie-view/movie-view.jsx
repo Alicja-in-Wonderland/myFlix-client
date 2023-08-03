@@ -1,5 +1,5 @@
+import React from "react";
 import PropTypes from "prop-types";
-import React from "react"
 
 //Info displayed once user clicks a movie title
 export const MovieView = ({ movie, onBackClick }) => {
