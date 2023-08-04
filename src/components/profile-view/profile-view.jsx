@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Col, Row, Button, Form, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
-export const ProfileView = ({ user, token, movies, onLoggedOut, onRemoveFavourite }) => {
+export const ProfileView = ({ user, token, movie, movies, onLoggedOut, onRemoveFavourite }) => {
     const [userData, setUserData] = useState(null);
     const [username, setUsername] = useState(user.Username);
     const [password, setPassword] = useState("");

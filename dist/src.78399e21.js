@@ -53838,6 +53838,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var ProfileView = function ProfileView(_ref) {
   var user = _ref.user,
     token = _ref.token,
+    movie = _ref.movie,
     movies = _ref.movies,
     onLoggedOut = _ref.onLoggedOut,
     onRemoveFavourite = _ref.onRemoveFavourite;
