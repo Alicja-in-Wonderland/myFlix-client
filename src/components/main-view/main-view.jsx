@@ -9,6 +9,7 @@ import { NavigationBar } from "../navigation-bar/navigation-bar";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { ProfileView } from "../profile-view/profile-view";
 
 
 export const MainView = () => {
@@ -88,6 +89,23 @@ export const MainView = () => {
                                     </Col>
                                 )}
                             </>
+                        }
+                    />
+                    <Route
+                        path="/profile"
+                        element={
+                            <>
+                                {!user ? (
+                                    <Navigate to="/login" replace />
+                                ) : (
+                                    <Col>
+                                        <ProfileView
+                                            user={user}
+                                            token={token}
+                                            setUser={setUser}
+                                        />
+                                    </Col>
+                                )}</>
                         }
                     />
                     <Route
