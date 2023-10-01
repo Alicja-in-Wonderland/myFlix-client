@@ -1,6 +1,8 @@
 # myFlix-client
 
-This is the front-end of the myFlix movie app. This project is designed to work alongside the movie_api repository, which can be found here https://github.com/Alicja-in-Wonderland/movie_api. MyFlix is a web application that provides users with access to information about different movies, their directors, and genres. Users are be able to sign up/log in, update their personal information, and create a list of favourite movies.
+This is the front-end of the myFlix movie app. This project is designed to work alongside the movie_api repository, which can be found here https://github.com/Alicja-in-Wonderland/movie_api. 
+
+MyFlix is a web application that provides users with access to information about different movies, their directors, and genres. Users are be able to sign up/log in, update their personal information, and create a list of favourite movies.
 
 ## Screenshot
 ![Screenshot 2023-08-09 at 17 21 12](https://github.com/Alicja-in-Wonderland/myFlix-client/assets/129612148/aa6a677c-9209-4556-b8d7-cd0fe3ae3acd)
